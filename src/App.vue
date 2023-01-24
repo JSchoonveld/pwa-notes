@@ -8,7 +8,7 @@ import Tiptap from "./components/Tiptap.vue";
 
     </div>
     <div class="flex flex-col flex-grow">
-      <div class="flex flex-col flex-grow overflow-auto prose lg:prose-xl">
+      <div class="flex flex-col flex-grow overflow-auto">
         <editor-content :editor="editor"></editor-content>
       </div>
     </div>
@@ -34,7 +34,12 @@ export default {
       content: '',
       extensions: [
           StarterKit
-      ]
+      ],
+      editorProps: {
+        attributes: {
+          class: "prose lg:prose-xl my-6 mx-auto focus:outline-none"
+        }
+      }
     })
   },
   beforeUnmount() {
